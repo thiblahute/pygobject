@@ -344,6 +344,34 @@ for f in $FILES_TO_CONVERT; do
     -pe "s/Clutter.RELEASE_MASK/Clutter.ModifierType.RELEASE_MASK/g;" \
     -pe "s/Clutter.SHIFT_MASK/Clutter.ModifierType.SHIFT_MASK/g;" \
     -pe "s/Clutter.SUPER_MASK/Clutter.ModifierType.SUPER_MASK/g;" \
+\
+    -pe "s/import gst\n/from gi.repository import Gst\n/g;" \
+    -pe "s/import gst/import Gst/g;" \
+    -pe "s/import gst.tag\n/from gi.repository import GstTag\n/g;" \
+    -pe "s/gst.tag\./GstTag\./g;" \
+    -pe "s/import gst.pbutils\n/from gi.repository import GstPbutils\n/g;" \
+    -pe "s/gst.pbutils\./GstPbutils\./g;" \
+    -pe "s/import gst.controller\n/from gi.repository import GstController\n/g;" \
+    -pe "s/gst.controller\./GstController\./g;" \
+    -pe "s/import gst.base\n/from gi.repository import GstBase\n/g;" \
+    -pe "s/gst.base\./GstBase\./g;" \
+    -pe "s/import gst.audio\n/from gi.repository import GstAudio\n/g;" \
+    -pe "s/gst.audio\./GstAudio\./g;" \
+    -pe "s/import gst.video\n/from gi.repository import GstVideo\n/g;" \
+    -pe "s/gst.video\./GstVideo\./g;" \
+    -pe "s/gst.SEEK_TYPE_/SeekType\./g;" \
+    -pe "s/gst.SEEK_FLAG_/SeekFlag\./g;" \
+    -pe "s/gst.RANK_/Gst.Rank./g;" \
+    -pe "s/gst.TYPE_FIND_/gst.TypeFindProbability./g;" \
+    -pe "s/gst.element_factory_make/gst.ElementFactory.make/g;" \
+    -pe "s/gst.ElementFactory.make./gst.ElementFactory.make/g;" \
+    -pe "s/gst.registry_get_default/Gst.Registry\.get/g;" \
+    -pe "s/import pygst/from gi.repository import Gst/g;" \
+    -pe "s/gst.TYPE_ELEMENT_FACTORY/Gst.ElementFactory/g;" \
+    -pe "s/gst.TYPE_TYPE_FIND_FACTORY/Gst.TypeFindFactory/g;" \
+    -pe "s/gst.TYPE_TYPE_FIND_FACTORY/Gst.TypeFindFactory/g;" \
+    -pe "s/(?<!\.)pygst\./Gst\./g;" \
+    -pe "s/gst\./Gst\./g;" \
     $f
 done
 
