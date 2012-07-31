@@ -8,6 +8,7 @@ pygioverrides_PYTHON = \
 	GIMarshallingTests.py \
 	Pango.py \
 	keysyms.py \
+	Gst.py \
 	__init__.py
 
 # if we build in a separate tree, we need to symlink the *.py files from the
