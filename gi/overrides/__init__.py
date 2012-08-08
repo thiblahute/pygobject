@@ -1,8 +1,12 @@
 import types
 
 from gi import _gobject
+from pkgutil import extend_path
 
 registry = None
+
+__path__ = extend_path(__path__, __name__)
+print __path__, __name__
 
 
 class _Registry(dict):

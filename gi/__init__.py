@@ -37,6 +37,11 @@ _overridesdir = os.path.join(os.path.dirname(__file__), 'overrides')
 version_info = gi._gobject.pygobject_version[:]
 __version__ = "{0}.{1}.{2}".format(*version_info)
 
+from pkgutil import extend_path
+
+__path__ = extend_path(__path__, __name__)
+print __path__, __name__
+
 
 def check_version(version):
     if isinstance(version, str):
